@@ -1,0 +1,447 @@
+
+:root{
+  --blue-900: #0d47a1;
+  --blue-800: #1565c0;
+  --blue-700: #1976d2;
+  --blue-600: #1e88e5;
+  --blue-500: #2196f3;
+  --blue-400: #42a5f5;
+  --blue-300: #64b5f6;
+  --blue-200: #90caf9;
+  --blue-100: #bbdefb;
+  --blue-50: #e3f2fd;
+}
+
+html, body{
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;  
+  overflow-x: hidden;
+}
+
+.container{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+header{
+  background-color: var(--blue-800);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .title{
+  margin-left: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+}
+
+.menu{
+  margin: none;
+  display: flex;
+}
+
+.menu button{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 0.3rem;
+  margin: 0.5rem 0.5rem;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 2rem;
+  padding:0.5rem 0.5rem;
+  font-size: 1rem;
+  color: white; 
+  cursor: pointer;
+}
+
+.menu button:hover{
+  color:var(--blue-200);
+  border: 2px solid var(--blue-200);
+}
+
+.menu button .name{
+  display: none;
+  margin-top: 0.2rem;
+}
+
+#activity-button:disabled,
+#activity-button[disabled]{
+  border: 2px solid var(--blue-200);
+  color:var(--blue-200);
+  cursor: default;
+}
+
+.main{
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.main .side-nav{
+  position: fixed;
+  display: inline-flex;
+  bottom: 0;
+  width: 100%;
+  height: 52px;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.main .side-nav button{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  height: 52px;
+  padding:0px 5px;
+  width: calc(100% / 3);
+  color: var(--blue-900);
+  background-color: white;
+  cursor: pointer;
+}
+
+.main .side-nav button.active{
+  background-color: var(--blue-200);
+}
+
+#Pedometer{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: calc(100% - 52px);
+}
+
+#Pedometer img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  top: 0rem;
+  left: 1rem;
+}
+
+#Pedometer .overlay{
+  position: absolute;
+  background-color:var(--blue-900);
+  opacity: 0.85;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+#Pedometer .data-container{
+  display: flex;
+  gap: 2rem;
+  font-size: 1.25rem;
+}
+
+#Sitting{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: calc(100% - 52px);
+}
+
+#Sitting .sitting-text{
+  text-align: center;
+  color: white;
+  font-size: 1.25rem;
+  padding: 3rem 1rem 1.5rem 1rem;
+}
+
+#time-data, #caption-text{
+  color: white;
+  font-size: 1.125rem;
+}
+
+#Sitting img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+
+#Sitting .overlay{
+  position: absolute;
+  background-color:var(--blue-900);
+  opacity: 0.85;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+#Activity-Summary{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100% - 52px);
+}
+
+#Activity-Summary h3{
+  margin: 1rem 0rem;
+}
+
+#pie-chart{
+  margin-bottom: 0.2rem;
+}
+
+#Activity-Summary .time-summary{
+  font-size: 1.25rem;
+  margin: 0.3rem 0rem;
+}
+
+#Settings{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: calc(100% - 52px);
+}
+
+#Settings h2{
+  color: white;
+}
+
+#Settings img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  top: 0;
+  left: 1rem;
+}
+
+#Settings .overlay{
+  position: absolute;
+  background-color:var(--blue-900);
+  opacity: 0.85;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+#Settings .settings-attributes{
+  display: block;
+  height: fit-content;
+  color: white;
+}
+
+#Settings .settings-attributes label{
+  font-weight: 300;
+}
+
+#save-button{
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  width: 50%;
+  padding: 0.5rem 2rem;
+  border: 2px solid var(--blue-100);
+  background-color: transparent;
+  color:var(--blue-100);
+  cursor: pointer;
+}
+
+#save-button:hover{
+  border: 2px solid var(--blue-200);
+  color:var(--blue-200);
+}
+
+.attributes{
+  margin: 0.75rem 0.25rem;
+}
+
+.settings-attributes label{
+  font-weight: 600;
+}
+
+#saved-data-alert{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  z-index: 1;
+  height: 50%;
+  width: 80%;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#saved-data-alert h1{
+  font-size: 1.25rem;
+}
+
+#saved-data-alert .text{
+  font-size: 1rem;
+  text-align: center;
+}
+
+#saved-data-overlay{
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--blue-900);
+  opacity: 0.9;
+}
+
+#saved-data-alert button{
+  display: block;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--blue-900);
+  color:var(--blue-900);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#saved-data-alert button:hover{
+  border: 2px solid var(--blue-700);
+  color:var(--blue-700);
+}
+
+@media screen and (max-width: 320px){
+  #distance-data, #calories-data{
+    font-size: 1.125rem;
+  }
+
+  #Sitting .sitting-text{
+    font-size: 1.125rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+
+  #time-data, #caption-text{
+    font-size: 1rem;
+  }
+
+  #Activity-Summary .time-summary{
+    font-size: 1rem;
+    margin: 0.3rem 0rem;
+  }
+}
+
+@media screen and (max-width: 300px){
+  #distance-data, #calories-data{
+    font-size: 1rem;
+  }
+
+  .main .side-nav button{
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 768px){
+  header{
+    height: 100px;
+  }
+
+  header .title{
+    font-size: 1.5rem;
+  }
+
+  .menu button{
+    border-radius: 0.2rem;
+  }
+  
+  .menu button .name{
+    display: block;
+  }
+
+  .main{
+    height: calc(100% - 100px);
+    width: 100%;
+    display: flex;
+  }
+
+  .main .side-nav{
+    position: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    background-color: var(--blue-50);
+  }
+  
+  .first-button{
+    margin-top: 5rem;
+  }
+
+  .main .side-nav button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border: none;
+    padding:0px 5px;
+    width: 100%;
+    color: var(--blue-900);
+    background-color: var(--blue-50);
+    cursor: pointer;
+  }
+
+  .main .side-nav button:hover{
+    color: var(--blue-900);
+    background-color: var(--blue-100);
+    cursor: pointer;
+  }
+  
+  .main .side-nav button.active{
+    background-color: var(--blue-200);
+  } 
+
+  .content{
+    height: 100%;
+    width: 70%;
+  }
+
+  #Pedometer, #Sitting, #Activity-Summary, #Settings{
+    height: 100%;
+  }
+
+  #Sitting img{
+    height: 80%;
+    width: 100%;
+    top: 3rem;
+  }
+
+  #Sitting .sitting-text{
+    font-size: 1.25rem;
+  }
+  
+  #caption-text, #time-data{
+    font-size: 1.5rem;
+  }
+
+  #Activity-Summary h3{
+   font-size: 1.5rem;
+  }
+
+  #save-button{
+    width: 20%;
+  }
+
+  #saved-data-alert{
+    height: 50%;
+    width: 50%;
+  }
+}

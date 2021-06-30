@@ -1,0 +1,21 @@
+{
+    "name": "Fitnetic",
+    "short_name": "Fitnetic",
+    "start_url": ".",
+    "background_color": "#1976d2",
+    "theme_color": "#1565c0",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "static/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "static/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ] 
+}
