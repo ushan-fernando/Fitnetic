@@ -10,6 +10,8 @@ let bluetoothButton, activityButton, saveButton;
 //Activity Variables
 let isActivityStarted = false;
 let myValue = ['0', '0'];
+let myActionValue = [null, null, null];
+let myTimeValue = [null, null, null, null];
 let whichTabShown;
 
 //Pedometer
@@ -52,9 +54,9 @@ function setup(){
     // the problem of the site not running in background(when on another tab or minimized).
     document.addEventListener("visibilitychange", () => {
         if(isActivityStarted){
-            walkingTime = myValue[2];
-            standingTime = myValue[3];
-            sittingTime = myValue[4];
+            walkingTime = myTimeValue[1];
+            standingTime = myTimeValue[2];
+            sittingTime = myTimeValue[3];
             timeText.innerText = convertSeconds(sittingTime);
         }
     });
@@ -200,6 +202,12 @@ function gotCharacteristics(error, characteristics){
 
 function gotValue(value){
     myValue = value.split('x');
+    if(myValue[0] == "0"){
+        myActionValue = myValue;
+    }
+    else{
+        myTimeValue = myValue;
+    }
 }
 
 function convertSeconds(s) {
@@ -210,7 +218,7 @@ function convertSeconds(s) {
 }
 
 function sittingData(){
-    if(isActivityStarted && myValue[0] == 'sitting'){
+    if(isActivityStarted && myActionValue[1] == 'sitting'){
         captionText.innerText = "You are sitting"
         timeText.innerText = convertSeconds(sittingTime);
     }
@@ -226,25 +234,25 @@ function sittingData(){
 }
 
 function pedometerData(){
-    if(isActivityStarted && myValue[0] == "walking"){
+    if(isActivityStarted && myActionValue[1] == "walking"){
     
         if(gender == 'male'){
             //Distance = ((0.415 * height/cm * stepCount)/10^5)km
-            distance = round((0.415 * height.value * myValue[1]) / 100000, 2);
+            distance = round((0.415 * height.value * myActionValue[2]) / 100000, 2);
             //Calories = stepCount * (0.57 * weight/lbs) / (1mile in cm/(height * 0.415))
-            calories = round(myValue[1] * (0.57 * weight.value * 2.20462) / (160934 / (height.value * 0.415)));
+            calories = round(myActionValue[2] * (0.57 * weight.value * 2.20462) / (160934 / (height.value * 0.415)));
         }
         else{
             //Distance = ((0.413 * height/cm * stepCount)/10^5)km
-            distance = round((0.413 * height.value * myValue[1]) / 100000, 2);
+            distance = round((0.413 * height.value * myActionValue[2]) / 100000, 2);
             //Calories = stepCount * (0.57 * weight/lbs) / (1mile in cm/(height * 0.413))
-            calories = round(myValue[1] * (0.57 * weight.value * 2.20462) / (160934 / (height.value * 0.413)));
+            calories = round(myActionValue[2] * (0.57 * weight.value * 2.20462) / (160934 / (height.value * 0.413)));
         }
     
         
         document.getElementById('distance-data').innerText = 'Distace: ' + distance + 'km'
         document.getElementById('calories-data').innerText = 'Calories: ' + calories + 'kcal'
-        stepCount = myValue[1];
+        stepCount = myActionValue[2];
     }
 }
 
@@ -336,9 +344,9 @@ function draw(){
         if(whichTabShown == "Activity-Summary") activitySummaryData();
 
         if(isActivityStarted){
-            walkingTime = myValue[2];
-            standingTime = myValue[3];
-            sittingTime = myValue[4];
+            walkingTime = myTimeValue[1];
+            standingTime = myTimeValue[2];
+            sittingTime = myTimeValue[3];
             
             localStorage.setItem('stepCount', stepCount);
             localStorage.setItem('walkingTime', walkingTime);

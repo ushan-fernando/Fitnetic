@@ -205,6 +205,8 @@ void timer(){
         standingTime++;
       }
     }
-    modelCharacteristic.setValue(myValue+"x"+String(stepCount)+"x"+String(walkingTime)+"x"+String(standingTime)+"x"+String(sittingTime)+"x"+String(totalTime));
+    modelCharacteristic.setValue(String("0")+"x"+myValue+"x"+String(stepCount));
+    delay(200);
+    modelCharacteristic.setValue(String("1")+"x"+String(walkingTime)+"x"+String(standingTime)+"x"+String(sittingTime));
   }
 }
