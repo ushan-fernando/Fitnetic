@@ -58,6 +58,7 @@ function setup(){
             standingTime = myTimeValue[2];
             sittingTime = myTimeValue[3];
             timeText.innerText = convertSeconds(sittingTime);
+            stepCount = myActionValue[2];
         }
     });
 
