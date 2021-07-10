@@ -5,6 +5,7 @@
 * [Technologies Used](#tech)
 * [Tools Required](#tools)
 * [Installation Guide](#install)
+* [Board Enclosure](#board)
 * [How to use Fitnetic](#using)
 * [How the project was made](#how)
 * [Future improvements list](#improve)
@@ -33,7 +34,8 @@ A fitness tracker built using an [Arduino Nano 33 BLE Sense](https://store.ardui
 * A laptop or phone with Chrome installed
 * An [Arduino Nano 33 BLE Sense](https://store.arduino.cc/usa/nano-33-ble-sense)/[Arduino Nano 33 BLE](https://store.arduino.cc/usa/nano-33-ble)
 * Micro USB cable
-* Portable Battery pack
+* Portable Battery pack/9V battery
+* Enclosure/Cardboard and rubber bands
 
 ----
 
@@ -55,6 +57,14 @@ A fitness tracker built using an [Arduino Nano 33 BLE Sense](https://store.ardui
 8. Once uploaded you are now ready to start using Fitnetic. Go to the [Fitnetic website](https://fitnetic.netlify.app) and follow the instructions in the next section.
 
 ----
+
+# <a name="board"></a>
+## Board Enclosure
+![Fitnetic Board](/images/fitnetic-board.jpg)
+![Fitnetic Enclosure](/images/fitnetic-enclosure.jpg)
+* Place the Arduino board in an enclosure as shown above with a 9V battery conneted to the Vin and GND pins of the board along with a switch connected in series. Glue a clip to the back of the enclosure.
+* **Alternative:** Cut a piece of cardboard that matches the shape of the board and secure the board using rubberbands or double-sided tape. A binder clip can be used as a clip for this build.
+* Once the enclosure is built, clip it onto the front of your pants(in front of left/right leg) and you're ready to start using.
 
 # <a name="using"></a>
 ## How to use Fitnetic
